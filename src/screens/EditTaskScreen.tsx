@@ -70,12 +70,9 @@ export default function EditTaskScreen() {
           style={[styles.input, styles.textArea]}
         />
       </View>
-       <TouchableOpacity
-                style={styles.saveButton}
-                onPress={handleSave}
-              >
-                <Text style={styles.buttonText}>Complete</Text>
-              </TouchableOpacity>
+      <TouchableOpacity style={styles.saveButton} onPress={handleSave}>
+        <Text style={styles.buttonText}>Complete</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -114,19 +111,19 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 50,
   },
-  saveButton:{
+  saveButton: {
     position: 'absolute',
-    top:400,
+    top: 400,
     right: 20,
     backgroundColor: '#60B985',
     paddingVertical: 15,
     paddingHorizontal: 30,
     borderRadius: 6,
   },
-  buttonText:{
+  buttonText: {
     color: '#fff',
     fontWeight: '600',
     fontSize: 18,
     fontFamily: 'Latto',
-  }
+  },
 });

@@ -16,23 +16,22 @@ const CompletedTaskItem: React.FC<CompletedTaskItemProps> = ({
   onView,
   onDelete,
 }) => {
-
   const handleDelete = () => {
-      Alert.alert(
-        'Confirm Delete',
-        'Are you sure you want to delete this task?',
-        [
-          {text: 'Cancel', style: 'cancel'},
-          {
-            text: 'Delete',
-            onPress: () => {
-              onDelete(id);
-            },
-            style: 'destructive',
+    Alert.alert(
+      'Confirm Delete',
+      'Are you sure you want to delete this task?',
+      [
+        {text: 'Cancel', style: 'cancel'},
+        {
+          text: 'Delete',
+          onPress: () => {
+            onDelete(id);
           },
-        ],
-      );
-    };
+          style: 'destructive',
+        },
+      ],
+    );
+  };
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
@@ -99,5 +98,4 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     fontSize: 16,
   },
- 
 });

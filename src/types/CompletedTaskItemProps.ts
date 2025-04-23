@@ -1,4 +1,4 @@
- export interface CompletedTaskItemProps {
+export interface CompletedTaskItemProps {
   id: string;
   title: string;
   onView: (id: string) => void;

@@ -1,14 +1,21 @@
-import { StyleSheet, Text, View, TextInput, TouchableOpacity,Image } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+  Image,
+} from 'react-native';
 import React from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { useNavigation } from '@react-navigation/native';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {useNavigation} from '@react-navigation/native';
 import NavBarComponent from '../components/NavBarComponent';
-import {useTaskContext} from '../context/TaskContext'
-import { useState } from 'react';
+import {useTaskContext} from '../context/TaskContext';
+import {useState} from 'react';
 
 export default function AddTaskScreen() {
   const navigation = useNavigation();
-  const { addTask } = useTaskContext();
+  const {addTask} = useTaskContext();
 
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -21,12 +28,13 @@ export default function AddTaskScreen() {
   };
   return (
     <SafeAreaView style={styles.container}>
-      
       {/* Back Button */}
-      <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+      <TouchableOpacity
+        onPress={() => navigation.goBack()}
+        style={styles.backButton}>
         <Image
           source={require('../../assets/icons/BackButton.png')} // Replace with your back icon path
-          style={{ width: 24, height: 24 }}
+          style={{width: 24, height: 24}}
         />
       </TouchableOpacity>
 
@@ -56,10 +64,7 @@ export default function AddTaskScreen() {
           <Text style={styles.buttonText}>Undo</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity
-          style={styles.addButton}
-          onPress={handleAddTask}
-        >
+        <TouchableOpacity style={styles.addButton} onPress={handleAddTask}>
           <Text style={styles.buttonText}>ADD</Text>
         </TouchableOpacity>
       </View>
@@ -83,7 +88,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 35,
     left: 10,
-    
   },
   input: {
     borderWidth: 1,
@@ -103,7 +107,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginTop: 50,
     paddingHorizontal: 10,
-    margin:-20,
+    margin: -20,
   },
   undoButton: {
     backgroundColor: '#9A8DFF',

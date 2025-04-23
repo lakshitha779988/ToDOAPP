@@ -1,23 +1,24 @@
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
+import {StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import React from 'react';
 import NavBarComponent from '../components/NavBarComponent';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { useTaskContext } from '../context/TaskContext';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {useTaskContext} from '../context/TaskContext';
 import TaskComponent from '../components/TaskComponent';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../App';
-import { useNavigation } from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../App';
+import {useNavigation} from '@react-navigation/native';
 
 export default function HomeScreen() {
-   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
-  const { tasks, toggleTask } = useTaskContext();
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  const {tasks, toggleTask} = useTaskContext();
 
   const handleView = (id: string) => {
-    navigation.navigate('ViewTask', { id });
+    navigation.navigate('ViewTask', {id});
   };
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{flex: 1}}>
       {tasks.length === 0 ? (
         <View style={styles.taskContainer}>
           <Text style={styles.noTaskText}>
@@ -26,29 +27,27 @@ export default function HomeScreen() {
           </Text>
           <Image
             source={require('../../assets/NoTask.png')}
-            style={{ width: 213, height: 298 }}
+            style={{width: 213, height: 298}}
           />
         </View>
       ) : (
-        <ScrollView style={{ flex: 1, backgroundColor: '#BFECFF' }}>
+        <ScrollView style={{flex: 1, backgroundColor: '#BFECFF'}}>
           <View style={styles.taskListContainer}>
-
-         
-          <View>
-          <Text style ={styles.hearderTesxt}>TASKS</Text>
-          </View>
-          <View>
-          {tasks.map((task) => (
-            <TaskComponent
-              key={task.id}
-              id={task.id}
-              title={task.title}
-              completed={task.completed}
-              onView={handleView}
-              onToggle={toggleTask}
-            />
-          ))}
-          </View>
+            <View>
+              <Text style={styles.hearderTesxt}>TASKS</Text>
+            </View>
+            <View>
+              {tasks.map(task => (
+                <TaskComponent
+                  key={task.id}
+                  id={task.id}
+                  title={task.title}
+                  completed={task.completed}
+                  onView={handleView}
+                  onToggle={toggleTask}
+                />
+              ))}
+            </View>
           </View>
         </ScrollView>
       )}
@@ -68,7 +67,7 @@ const styles = StyleSheet.create({
     right: 0,
   },
   taskContainer: {
-    flex:1,
+    flex: 1,
     paddingTop: 90,
     paddingBottom: 60,
     justifyContent: 'space-around',
@@ -86,7 +85,7 @@ const styles = StyleSheet.create({
     fontWeight: '900',
   },
 
-  hearderTesxt:{
+  hearderTesxt: {
     fontSize: 42,
     fontWeight: 'bold',
     color: '#7165F9',
@@ -94,7 +93,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   taskListContainer: {
-    flex:1,
+    flex: 1,
     flexDirection: 'column',
     gap: 47,
     paddingTop: 60,

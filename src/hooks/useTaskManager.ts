@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Task } from '../types/Task';
+import {useState, useEffect} from 'react';
+import {Task} from '../types/Task';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const TASKS_KEY = 'TASKS_STORAGE_KEY';
@@ -53,8 +53,8 @@ export const useTaskManager = () => {
   const toggleTask = (id: string) => {
     setTasks(prev =>
       prev.map(task =>
-        task.id === id ? { ...task, completed: !task.completed } : task
-      )
+        task.id === id ? {...task, completed: !task.completed} : task,
+      ),
     );
   };
 
@@ -62,9 +62,9 @@ export const useTaskManager = () => {
     setTasks(prev =>
       prev.map(task =>
         task.id === id
-          ? { ...task, title: newTitle, description: newDescription }
-          : task
-      )
+          ? {...task, title: newTitle, description: newDescription}
+          : task,
+      ),
     );
   };
 

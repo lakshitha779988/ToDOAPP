@@ -1,26 +1,34 @@
-import { Button, Image, StyleSheet, Text, View, ImageBackground, TouchableOpacity } from 'react-native';
+import {
+  Button,
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  ImageBackground,
+  TouchableOpacity,
+} from 'react-native';
 import React from 'react';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../App';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../App';
 
+type WelcomeScreenNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  'Welcome'
+>;
 
-
-
-
-type WelcomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Welcome'>;
-
-export default function WelcomeScreen({ navigation }: { navigation: WelcomeScreenNavigationProp }) {
-    
-
+export default function WelcomeScreen({
+  navigation,
+}: {
+  navigation: WelcomeScreenNavigationProp;
+}) {
   const goToHome = () => {
     navigation.navigate('Home');
   };
   return (
     <ImageBackground
-      source={require('../../assets/wellcomeBackground.png')} 
+      source={require('../../assets/wellcomeBackground.png')}
       style={styles.background}
-      resizeMode="cover"
-    >
+      resizeMode="cover">
       <View style={styles.container}>
         {/* Header Text */}
         <View style={styles.headerContainer}>
@@ -36,9 +44,9 @@ export default function WelcomeScreen({ navigation }: { navigation: WelcomeScree
 
         {/* Button */}
         <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText} onPress={goToHome}>
-                Get Started
-            </Text>
+          <Text style={styles.buttonText} onPress={goToHome}>
+            Get Started
+          </Text>
         </TouchableOpacity>
 
         {/* Footer */}
@@ -64,17 +72,17 @@ const styles = StyleSheet.create({
     marginTop: 60,
     display: 'flex',
     flexDirection: 'column',
-    gap:40
+    gap: 40,
   },
   title: {
-    fontFamily : 'Poppins',
+    fontFamily: 'Poppins',
     fontSize: 72,
     fontWeight: 'bold',
     color: '#4835F8', // violet
     opacity: 0.74,
   },
   subtitle: {
-    fontFamily : 'Poppins',
+    fontFamily: 'Poppins',
     fontSize: 24,
     color: '#000',
     fontWeight: 'bold',

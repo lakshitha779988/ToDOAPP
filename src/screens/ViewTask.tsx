@@ -74,13 +74,10 @@ export default function ViewTask() {
         />
       </TouchableOpacity>
       <View style={styles.taskContainer}>
-
-      
-      <Text style={styles.title}>{task.title}</Text>
-      <Text style={styles.description}>
-        {task.description || 'No description available.'}
-      </Text>
-
+        <Text style={styles.title}>{task.title}</Text>
+        <Text style={styles.description}>
+          {task.description || 'No description available.'}
+        </Text>
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
@@ -127,16 +124,15 @@ const styles = StyleSheet.create({
   },
   taskContainer: {
     marginTop: 100,
-   display: 'flex',
-   flexDirection:'column',
-   gap:20,
-   alignContent:'center',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 20,
+    alignContent: 'center',
   },
   backButton: {
     position: 'absolute',
     top: 35,
     left: 10,
-    
   },
   title: {
     fontSize: 16,

@@ -1,6 +1,6 @@
-import React, { createContext, useContext } from 'react';
-import { useTaskManager } from '../hooks/useTaskManager';
-import { Task } from '../types/Task';
+import React, {createContext, useContext} from 'react';
+import {useTaskManager} from '../hooks/useTaskManager';
+import {Task} from '../types/Task';
 
 interface TaskContextType {
   tasks: Task[];
@@ -12,11 +12,14 @@ interface TaskContextType {
 
 const TaskContext = createContext<TaskContextType | undefined>(undefined);
 
-export const TaskProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { tasks, addTask, deleteTask, toggleTask, editTask } = useTaskManager();
+export const TaskProvider: React.FC<{children: React.ReactNode}> = ({
+  children,
+}) => {
+  const {tasks, addTask, deleteTask, toggleTask, editTask} = useTaskManager();
 
   return (
-    <TaskContext.Provider value={{ tasks, addTask, deleteTask, toggleTask, editTask }}>
+    <TaskContext.Provider
+      value={{tasks, addTask, deleteTask, toggleTask, editTask}}>
       {children}
     </TaskContext.Provider>
   );

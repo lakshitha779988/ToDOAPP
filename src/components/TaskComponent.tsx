@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Pressable, Switch } from 'react-native';
+import {StyleSheet, Text, View, Pressable, Switch} from 'react-native';
 import React from 'react';
 
 interface TaskComponentProps {
@@ -31,8 +31,6 @@ export default function TaskComponent({
         onValueChange={() => onToggle(id)}
         style={styles.switch}
       />
-
-      
     </View>
   );
 }
@@ -47,7 +45,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     marginBottom: 20,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
+    shadowOffset: {width: 0, height: 1},
     shadowOpacity: 0.1,
     shadowRadius: 2,
     elevation: 3,

@@ -1,28 +1,28 @@
 import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
 import React from 'react';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../App';
-import { useNavigation } from '@react-navigation/native';
-
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../App';
+import {useNavigation} from '@react-navigation/native';
 
 export default function NavBarComponent() {
-  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const goToAddTask = () => {
     navigation.navigate('AddTask');
   };
   const goToHome = () => {
     navigation.navigate('Home');
-  }
+  };
   const goToCompletedTask = () => {
     navigation.navigate('CompletedTask');
-  }
+  };
 
   const goToPendingTask = () => {
     navigation.navigate('PendingTask');
-  }
+  };
   const goToProfile = () => {
     navigation.navigate('Profile');
-  }
+  };
   return (
     <View style={styles.navBarContainer}>
       <View style={styles.navIconContainer}>
@@ -34,7 +34,7 @@ export default function NavBarComponent() {
         </TouchableOpacity>
         <Text style={styles.navIconText}>Home</Text>
       </View>
-      <View style={[styles.navIconContainer,styles.completedIcon]}>
+      <View style={[styles.navIconContainer, styles.completedIcon]}>
         <TouchableOpacity onPress={goToCompletedTask}>
           <Image
             source={require('../../assets/icons/calendar.png')}
@@ -50,9 +50,8 @@ export default function NavBarComponent() {
             style={{width: 67, height: 64}}
           />
         </TouchableOpacity>
-    
       </View>
-      <View style={[styles.navIconContainer,styles.pedingIcon]}>
+      <View style={[styles.navIconContainer, styles.pedingIcon]}>
         <TouchableOpacity onPress={goToPendingTask}>
           <Image
             source={require('../../assets/icons/clock.png')}
@@ -89,26 +88,23 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    gap:10,
+    gap: 10,
     paddingTop: 20,
     paddingBottom: 30,
-
   },
-  navIconText :{
+  navIconText: {
     color: '#fff',
     fontFamily: 'Poppins',
     fontSize: 12,
   },
-  addIconContainer:{
-    position:'absolute',
+  addIconContainer: {
+    position: 'absolute',
     top: -30,
   },
-  pedingIcon:{
+  pedingIcon: {
     marginLeft: 40,
   },
-  completedIcon:{
+  completedIcon: {
     marginRight: 40,
   },
-
-  
 });
