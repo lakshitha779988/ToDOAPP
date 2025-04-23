@@ -93,9 +93,20 @@ npm install
 
 ## 🎥 Demo Video
 
-[Watch Demo on YouTube](update later)
+[Watch Demo](https://github.com/user-attachments/assets/152d0321-3e26-4222-aaba-34e2be7b6efc)
 
 ---
+
+
+
+
+
+## release link
+
+[release link of v1.0.0](https://github.com/lakshitha779988/ToDOAPP/releases/tag/v1.0.0)
+
+---
+
 
 ## 💬 Acknowledgements
 
