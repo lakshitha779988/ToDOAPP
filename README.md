@@ -87,13 +87,13 @@ npm install
 
 ## 🎨 Figma Design
 
-[Figma UI Design](https://www.figma.com/design/vso1HowSNXaxOS9Ht7Xewd/Untitled?node-id=0-1&t=lEIkcjkCqg8WjGbv-1) *(Replace with your actual Figma link)*
+[Figma UI Design](https://www.figma.com/design/vso1HowSNXaxOS9Ht7Xewd/Untitled?node-id=0-1&t=lEIkcjkCqg8WjGbv-1) 
 
 ---
 
 ## 🎥 Demo Video
 
-[Watch Demo on YouTube](update later) *(Replace with your actual video link)*
+[Watch Demo on YouTube](update later)
 
 ---
 
