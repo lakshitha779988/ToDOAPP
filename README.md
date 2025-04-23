@@ -116,6 +116,6 @@ Big thanks to everyone who supported this journey ❤️
 
 ## 📩 Contact
 
-For questions, suggestions, or feedback, feel free to reach out via GitHub or [lakshitha779988@gmail.com].
+For questions, suggestions, or feedback, feel free to reach out via GitHub or lakshitha779988@gmail.com.
 
 ```
