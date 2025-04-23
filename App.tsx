@@ -1,131 +1,50 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import WelocmeScreen from './src/screens/WelocmeScreen'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import WelcomeScreen from './src/screens/WelocmeScreen';
+import HomeScreen from './src/screens/HomeScreen';
+import AddTaskScreen from './src/screens/AddTaskScreen';
+import CompletedTaskScreen from './src/screens/CompletedTaskScreen';
+import PendingTaskScreen from './src/screens/PendingTaskScreen';
+import ProfileScreen from './src/screens/ProfileScreen';
+import {TaskProvider} from './src/context/TaskContext'
+import ViewTask from './src/screens/ViewTask';
+import EditTaskScreen from './src/screens/EditTaskScreen';
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+export type RootStackParamList = {
+  Welcome: undefined;
+  Home: undefined;
+  AddTask: undefined;
+  CompletedTask : undefined;
+  PendingTask :undefined;
+  Profile : undefined;
+  ViewTask: { id: string };
+  EditTask: { id: string };
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+};
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+export default function App() {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
+    <TaskProvider>
+    <NavigationContainer>
+    <Stack.Navigator initialRouteName="Welcome" screenOptions={{ animation: 'none' }}>
+  <Stack.Screen name="Welcome" component={WelcomeScreen} options={{ headerShown: false }} />
+  <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+  <Stack.Screen name="AddTask" component={AddTaskScreen} options={{ headerShown: false }} />
+  <Stack.Screen name="CompletedTask" component={CompletedTaskScreen} options={{ headerShown: false }} />
+  <Stack.Screen name="PendingTask" component={PendingTaskScreen} options={{ headerShown: false }} />
+  <Stack.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
+  <Stack.Screen name="ViewTask" component={ViewTask} options={{ headerShown: false }} />
+  <Stack.Screen name="EditTask" component={EditTaskScreen} options={{ headerShown: false }} />
+</Stack.Navigator>
+
+  </NavigationContainer>
+  </TaskProvider>
+  )
 }
 
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  /*
-   * To keep the template simple and small we're adding padding to prevent view
-   * from rendering under the System UI.
-   * For bigger apps the recommendation is to use `react-native-safe-area-context`:
-   * https://github.com/AppAndFlow/react-native-safe-area-context
-   *
-   * You can read more about it here:
-   * https://github.com/react-native-community/discussions-and-proposals/discussions/827
-   */
-  const safePadding = '5%';
-
-  return (
-    <View style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        style={backgroundStyle}>
-        <View style={{paddingRight: safePadding}}>
-          <Header/>
-        </View>
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-            paddingHorizontal: safePadding,
-            paddingBottom: safePadding,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
-
-export default App;
+const styles = StyleSheet.create({})
