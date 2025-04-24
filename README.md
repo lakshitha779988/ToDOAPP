@@ -36,7 +36,7 @@ npm install -g react-native-cli
 ### 🔧 Clone and Install
 
 ```bash
-git clone https://github.com/your-username/task-manager-app.git
+git clone https://github.com/lakshitha779988/ToDOAPP.git
 cd task-manager-app
 npm install
 ```
